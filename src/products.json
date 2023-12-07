@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Pedigree Adulto",
+        "description": "Alimento completo para perros",
+        "price": 21000,
+        "thumbnail": "./pedigree.jpg",
+        "code": 4000,
+        "stock": 100
+    },
+    {
+        "id": 2,
+        "title": "Pedigree Cachorros",
+        "description": "Alimento completo para perros",
+        "price": 21000,
+        "thumbnail": "./pedigree.jpg",
+        "code": 4000,
+        "stock": 100
+    },
+    {
+        "id": 3,
+        "title": "Pedigree Pequeños",
+        "description": "Alimento completo para perros",
+        "price": 21000,
+        "thumbnail": "./pedigree.jpg",
+        "code": 4000,
+        "stock": 100
+    },
+    {
+        "id": 4,
+        "title": "Whiskas pescado",
+        "description": "Alimento completo para gatos",
+        "price": 19000,
+        "thumbnail": "./whiskas.jpg",
+        "code": 4024,
+        "stock": 100
+    },
+    {
+        "id": 5,
+        "title": "Whiskas pollo",
+        "description": "Alimento completo para gatos",
+        "price": 19000,
+        "thumbnail": "./whiskas.jpg",
+        "code": 4024,
+        "stock": 100
+    },
+    {
+        "id": 6,
+        "title": "Whiskas carne",
+        "description": "Alimento completo para gatos",
+        "price": 19000,
+        "thumbnail": "./whiskas.jpg",
+        "code": 4024,
+        "stock": 100
+    },
+    {
+        "id": 7,
+        "title": "Whiskas castrados",
+        "description": "Alimento completo para gatos",
+        "price": 19000,
+        "thumbnail": "./whiskas.jpg",
+        "code": 4024,
+        "stock": 100
+    },
+    {
+        "id": 8,
+        "title": "Whiskas salmon",
+        "description": "Alimento completo para gatos",
+        "price": 19000,
+        "thumbnail": "./whiskas.jpg",
+        "code": 4024,
+        "stock": 100
+    }
+]
