@@ -6,38 +6,28 @@ const productManager = new ProductManager('./products.json');
 const app = express();
 app.use(express.urlencoded({extended: true}));
 
-app.get('/products', (req, res) => {
-  try {
-    const limit = req.query.limit ? parseInt(req.query.limit, 10) : undefined;
+app.get('/products', async (req, res) =>{
+  const {limit} = req.query;
+  const productList = await productManager.getProducts();
+  if (!limit || limit >= productList.length) {
+    return res.send({productList});
+  };
 
-    const products = productManager.getProducts(limit);
-
-    if (limit) {
-      res.send(`Mostrando ${limit} productos: ${JSON.stringify(products)}`);
-    } else {
-      res.send(`Mostrando todos los productos: ${JSON.stringify(products)}`);
-    }
-  } catch (error) {
-    console.error(error);
-    res.send('Error al procesar la solicitud');
-  }
+  const limitedProducts = productList.splice(0, limit);
+  return res.send({limitedProducts});
 });
 
-app.get('/products/:pid', (req, res) => {
-    try {
-      const productId = parseInt(req.params.pid, 10);
-      const product = productManager.getProductById(productId);
-      if (product) {
-        res.json({ product });
-      } else {
-        res.send({ error: 'Producto no encontrado' });
-      }
-    } catch (error) {
-      console.error(error);
-      res.send({ error: 'Error al procesar la solicitud' });
-    }
-  });
-  
+app.get('/products/:pid', async (req, res) => {
+  const {pid} = req.params;
+  const productById = await productManager.getProductsById(parseInt(pid));
+
+  if (!productById) {
+    return res.send({error: 'producto no encontrado'});
+  };
+
+  res.send({productById});
+});
+
   app.listen(PORT, () => {
     console.log(`Servidor escuchando en puerto ${PORT}`);
   });
